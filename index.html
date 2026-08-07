@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIプロンプト作成アシスタント</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 効率化プロンプト生成ツール</h1>
+    
+    <!-- 1. テンプレート選択 -->
+    <div class="section">
+      <label for="template-select"><strong>■ 使う目的を選んでください：</strong></label>
+      <select id="template-select">
+        <option value="minutes">📝 議事録作成</option>
+        <option value="report">📊 業務報告書</option>
+        <option value="email">✉️ ビジネスメール</option>
+        <option value="custom">⚙️ 役割・形式指定（カスタム）</option>
+      </select>
+    </div>
+
+    <hr>
+
+    <!-- 2. プロンプト構成要素の入力欄 -->
+    <div class="section">
+      <h3>■ テンプレート項目</h3>
+      
+      <label>🎭 役割（AIに何になりきってもらうか）：</label>
+      <input type="text" id="role" placeholder="例：優秀なビジネスコンサルタント">
+
+      <label>📋 出力形式：</label>
+      <input type="text" id="format" placeholder="例：箇条書き、箇条書き＋所感など">
+
+      <label>📌 背景や条件：</label>
+      <textarea id="context" placeholder="例：社内向けの週次報告、相手は上司"></textarea>
+
+      <label>⚠️ ルール（制約事項）：</label>
+      <textarea id="rules" placeholder="例：専門用語は使わない、300文字以内"></textarea>
+
+      <label>📝 メモ・元の文章（入力データ）：</label>
+      <textarea id="notes" placeholder="ここに打ち合わせメモやメールの下書きを貼り付け"></textarea>
+    </div>
+
+    <!-- 3. アクションボタン -->
+    <button id="generate-btn">プロンプトを作成＆AI実行</button>
+
+    <!-- 4. 結果表示 -->
+    <div class="section">
+      <h3>🤖 AIの回答：</h3>
+      <div id="result-box">ここに結果が表示されます</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
